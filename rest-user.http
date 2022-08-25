@@ -1,0 +1,266 @@
+@url = http://localhost:5000/api
+
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTQxOTFiNGZkYzhmZTcwZDdlODVlNTYiLCJpYXQiOjE2NTU4NzY0NTgsImV4cCI6MTY1NTk2Mjg1OH0.-6m8Tv8ZS1gCGDaqt21XNeQwtnSXRqWqRslryEKbcU0
+
+## User Registration ##
+POST {{url}}/signup
+Content-Type: application/json
+
+{
+    "Firstname" : "test35",
+    "Lastname" : "test35",
+    "email" : "test35@rideradar.com",
+    "MobileNumber" : "0944788338812",
+    "password" : "12345678",
+    "role": 1,
+    "sex": "M",
+    "ReferralCode" : "613defb01c718927e053cece"
+ 
+}
+
+### User Signin Mobile number ###
+POST {{url}}/signin
+Content-Type: application/json
+
+{
+   "mobile" : "09889931188",
+   "password" : "12345678"
+}
+
+
+
+### User Signin Mobile number ###
+POST {{url}}/login/token
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTQxOTFiNGZkYzhmZTcwZDdlODVlNTYiLCJpYXQiOjE2MzIyMjc1ODUsImV4cCI6MTYzMjMxMzk4NX0.giYic7pR196lUb3xDTthYl_Bo8Kl51UVUem1EpGo2wg
+
+
+### User Signin Mobile number ###
+POST {{url}}/admin/notification
+Content-Type: application/json
+
+{
+   "notification" : "its a prank!"
+}
+
+### User Signin Mobile number ###
+PUT {{url}}/user/change-password
+Content-Type: application/json
+
+{
+   "userId" : "613defb01c718927e053cece",
+   "newPassword" : "12345678"
+}
+
+
+### User Signin Mobile number ###
+PUT {{url}}/user/update-profile/613e0e4c43f5bc35fcfd6fc9
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "Firstname": "tony",
+  "Lastname": "fowler",
+  "MobileNumber": "0944788338812",
+  "email": "test35@rideradar.com",
+  "sex": "F",
+  "ReferralCode": "613defb01c718927e053cece"
+}
+
+### User Signin Mobile number ###
+GET {{url}}/user/profile/613e0e4c43f5bc35fcfd6fc9
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+
+### User Signin Mobile number ###
+GET {{url}}/user/profile
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+
+
+### User Signin email ###
+POST {{url}}/signin
+Content-Type: application/json
+
+{
+   "email" : "admin@rideradar.com",
+   "password" : "12345678"
+}
+
+
+### User Signout ###
+GET {{url}}/signout
+Content-Type: application/json
+
+{
+   "email" : "admin@rideradar.com",
+   "password" : "12345678"
+}
+
+
+### log transaction ###
+POST {{url}}/user/transaction/log
+Content-Type: application/json
+
+{
+"userFirstname" : "gerald", 
+"userLastname" : "castro", 
+"userCurrentLocation" : "makati city", 
+"userDestination" : "sm marikina", 
+"userChosenProvider" : "grab"
+}
+
+
+
+### log transaction ###
+GET {{url}}/user/getPrice/motor/mrspeedy/11
+Content-Type: application/json
+
+### log transaction ###
+POST {{url}}/user/transaction/log
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTQxOTFiNGZkYzhmZTcwZDdlODVlNTYiLCJpYXQiOjE2MzIyMjc1ODUsImV4cCI6MTYzMjMxMzk4NX0.giYic7pR196lUb3xDTthYl_Bo8Kl51UVUem1EpGo2wg
+
+
+{
+"savePlaceName" : "home1", 
+"long" : 233.23, 
+"lat" : 120.22 , 
+"details":  "la lang"
+}
+### User Signin Mobile number ###
+POST {{url}}/login/token
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTQxOTFiNGZkYzhmZTcwZDdlODVlNTYiLCJpYXQiOjE2MzIyMjc1ODUsImV4cCI6MTYzMjMxMzk4NX0.giYic7pR196lUb3xDTthYl_Bo8Kl51UVUem1EpGo2wg
+
+
+
+### log transaction ###
+POST {{url}}/admin/add/client
+Content-Type: application/json
+
+
+
+{
+"size" : "2/2", 
+"cuttingCost" : 23, 
+"threading" : 32, 
+"bending":  70
+}
+
+
+### log transaction ###
+
+GET {{url}}/admin/get/query/provider?category=0&sort='ASC'
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+
+
+### log transaction ###
+
+GET {{url}}/admin/get/one/provider/4
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+
+
+
+### log transaction ###
+PUT {{url}}/admin/update/provider/4
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "id_provider": 1,
+    "icon_url": "https://mdodive.s3.us-east-2.amazonaws.com/logo+(1).svg",
+    "name": "Borzo",
+    "redir_url": "https://borzodelivery.com/ph",
+    "rate": 51,
+    "category": 0
+  }
+
+### log transaction ###
+
+GET {{url}}/user/getPrice?providerId=10&distanceKm=14&rate=62
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+
+### log transaction ###
+POST {{url}}/user/save-place
+Content-Type: application/json
+Authorization: Bearer {{token}} 
+
+{
+  "location" : {
+    "address" : "9 E Yuhico, Las Piñas, 1747 Metro Manila, Philippines",
+    "landmark" : "My Location",
+    "latitude": 14.4410287,
+    "latitudeDelta": 0.0922,
+    "longitude": 120.9750232,
+    "longitudeDelta": 0.0421
+  },
+  "type": {}
+}
+
+
+### log transaction ###
+GET {{url}}/user/get-place
+Content-Type: application/json
+Authorization: Bearer {{token}} 
+
+
+### log transaction ###
+PUT {{url}}/user/update-place?saveplaceId=savePlace1655887712110
+Content-Type: application/json
+Authorization: Bearer {{token}} 
+
+{
+  "location" : {
+    "address" : "9 Ehi 8===D Yuhico, Las Piñas, 1747 Metro Manila, Philippines",
+    "landmark" : "My Location",
+    "latitude": 14.4410287,
+    "latitudeDelta": 0.0922,
+    "longitude": 120.9750232,
+    "longitudeDelta": 0.0421
+  },
+  "type": {}
+}
+
+
+### log transaction ###
+POST {{url}}/user/transaction/history
+Content-Type: application/json
+Authorization: Bearer {{token}} 
+
+{
+  "origin" : {
+    "address" : "9 Ehi 8===D Yuhico, Las Piñas, 1747 Metro Manila, Philippines",
+    "landmark" : "My Location",
+    "latitude": 14.4410287,
+    "latitudeDelta": 0.0922,
+    "longitude": 120.9750232,
+    "longitudeDelta": 0.0421
+  },
+  "destination" : {
+   "address" : "9 Ehi 8===D Yuhico, Las Piñas, 1747 Metro Manila, Philippines",
+    "landmark" : "My Location",
+    "latitude": 14.4410287,
+    "latitudeDelta": 0.0922,
+    "longitude": 120.9750232,
+    "longitudeDelta": 0.0421
+  },
+  "provider" : "Angkas",
+  "amount": {"price" : 99999}
+}
+
+### log transaction ###
+GET {{url}}
+
+Content-Type: application/json
+Authorization: Bearer {{token}} 
+
+

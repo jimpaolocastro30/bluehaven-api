@@ -3,13 +3,11 @@ const crypto = require('crypto');
 
 const asszbt41401045Schema = new mongoose.Schema(
     { 
+
       size: {
       type: String,
     },
       cuttingCost: {
-      type: String,
-    },
-      quarter: {
       type: String,
     },
       threading: {
@@ -22,4 +20,4 @@ const asszbt41401045Schema = new mongoose.Schema(
     { timestamp: true }
 );
 
-module.exports = mongoose.model('anchor/sagrod-szbt-4140/1045', asszbt41401045Schema);
+module.exports = mongoose.model('anchorBold', asszbt41401045Schema);

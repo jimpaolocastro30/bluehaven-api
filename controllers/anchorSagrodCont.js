@@ -1,13 +1,11 @@
-const asszabt41401045 = require('../models/EarningsDeductions');
-const moment = require('moment');
-let config = require('../env.js'); 
+const asszabt41401045 = require('../models/anchorBold');
 const fs = require('fs')
 var moment = require("moment");
 var _ = require("lodash");
 
 
 exports.addAnchorSagrod = (req, res) => {
-  const {} = req.body;
+  const {size, cuttingCost, threading,  bending} = req.body;
   let completeId = new asszabt41401045({ size, cuttingCost, threading,  bending});
 
 
