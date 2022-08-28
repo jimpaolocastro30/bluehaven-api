@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const crypto = require('crypto');
 
-const asszbt41401045Schema = new mongoose.Schema(
+const asszbtCRSSchema = new mongoose.Schema(
     { 
 
       size: {
@@ -16,11 +16,11 @@ const asszbt41401045Schema = new mongoose.Schema(
       bending: {
       type: String,
     },
-      DateCreated:{
+    DateCreated:{
       type:Date
     },
     },
     { timestamp: true }
 );
 
-module.exports = mongoose.model('anchor/sagrod-szbt-4140/1045', asszbt41401045Schema);
+module.exports = mongoose.model('anchor/sagrod-szbt-crs', asszbtCRSSchema);

@@ -1,21 +1,21 @@
 const mongoose = require('mongoose');
 const crypto = require('crypto');
 
-const asszbt41401045Schema = new mongoose.Schema(
+const turnBuckleSchema = new mongoose.Schema(
     { 
 
-      size: {
+      millimeter: {
       type: String,
     },
-      cuttingCost: {
+    turnBuckle: {
       type: String,
     },
-      threading: {
+    pipeSize: {
       type: String,
     },
-      bending: {
+      price: {
       type: String,
-    },
+    }, 
       DateCreated:{
       type:Date
     },
@@ -23,4 +23,4 @@ const asszbt41401045Schema = new mongoose.Schema(
     { timestamp: true }
 );
 
-module.exports = mongoose.model('anchor/sagrod-szbt-4140/1045', asszbt41401045Schema);
+module.exports = mongoose.model('turn-buckles', turnBuckleSchema);
