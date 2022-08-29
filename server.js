@@ -15,6 +15,8 @@ const anchorSagrod = require('./routes/anchorSagrod');
 // app
 const app = express();
 
+// cors
+app.use(cors({ origin: `*` }));
 //db
 
 mongoose
@@ -27,8 +29,7 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 app.use('/uploads', express.static('uploads'))
 
-// cors
-app.use(cors({ origin: `*` }));
+
 
 
 // routes
