@@ -26,11 +26,10 @@ app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use('/uploads', express.static('uploads'))
-// cors
 
-if (process.env.NODE_ENV === 'development') {
-    app.use(cors({ origin: `*` }));
-}
+// cors
+app.use(cors({ origin: `*` }));
+
 
 // routes
 
