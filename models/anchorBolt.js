@@ -21,6 +21,9 @@ const anchorBoltsSchema = new mongoose.Schema(
     fW: {
       type: String,
     },
+    typeAnchor: {
+      type: String,
+    },
     total: {
       type: String,
     },

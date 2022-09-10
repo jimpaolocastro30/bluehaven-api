@@ -1,13 +1,13 @@
-const jBolt = require('../models/anchorBolt');
+const jBolt = require('../models/jBolt');
 const fs = require('fs')
 var moment = require("moment");
 var _ = require("lodash");
 
 
-exports.addAnchorBolt = (req, res) => {
-  const {sizeA, inchA, bend, standard, hexNut, fW, total,typeAnchor} = req.body;
+exports.addJbolt = (req, res) => {
+  const {jboltDiameter, lenght, price} = req.body;
   let DateCreated = moment().format('l');
-  let completeId = new jBolt({ sizeA, inchA, bend, standard, hexNut, fW, total,typeAnchor, DateCreated});
+  let completeId = new jBolt({ jboltDiameter, lenght, price, DateCreated});
   
 
   completeId.save((err, data) => {
@@ -19,11 +19,11 @@ exports.addAnchorBolt = (req, res) => {
           });
       }
 
-      res.json('Success : Added Anchor bolt '); // dont do this res.json({ tag: data });
+      res.json('Success : Added jBolt '); // dont do this res.json({ tag: data });
   });
 };
 
-exports.getPaginatedSearchAnchorBolt = (req, res) => {
+exports.getPaginatedSearchJbolt = (req, res) => {
   const pagination = req.query.pagination ? parseInt(req.query.pagination) : 10;
   const page = req.query.page ? parseInt(req.query.page) : 1;
 
@@ -34,12 +34,12 @@ exports.getPaginatedSearchAnchorBolt = (req, res) => {
         jBolt.find({ $or: [{ FirstName: { $regex: Name, $options: 'i' } }] }).skip((page - 1) * pagination).limit(pagination).sort({ "Name": 1 }).exec((err, tag) => {
                 if (err) {
                   return res.status(400).json({
-                      error: 'Anchor bolt not found'
+                      error: 'jBolt not found'
                   });
               }
 
               res.json({
-                  "identifier": "get all Anchor bolt list", tag,
+                  "identifier": "get all jBolt list", tag,
                   pagination, page, total
               });
 
@@ -54,11 +54,11 @@ exports.getPaginatedSearchAnchorBolt = (req, res) => {
           }).skip((page - 1) * pagination).limit(pagination).exec((err, tag) => {
               if (err) {
                   return res.status(400).json({
-                      error: 'Anchor bolt not found'
+                      error: 'jBolt not found'
                   });
               }
               res.json({
-                  "identifier": "get all Anchor bolt list", tag,
+                  "identifier": "get all jBolt list", tag,
                   pagination, page, total
               });
           });
@@ -71,7 +71,7 @@ exports.getPaginatedSearchAnchorBolt = (req, res) => {
         jBolt.find({}).skip((page - 1) * pagination).limit(pagination).exec((err, tag) => {
               if (err) {
                   return res.status(400).json({
-                      error: 'Anchor bolt not found'
+                      error: 'Dynabolt not found'
                   });
               }
               for (let val of tag) {
@@ -80,54 +80,54 @@ exports.getPaginatedSearchAnchorBolt = (req, res) => {
         
                   });
               }
-              res.json({ "identifier": "get all Anchor bolt list", tag, pagination, page, total });
+              res.json({ "identifier": "get all jBolt list", tag, pagination, page, total });
 
           });
       });
   }
 };
 
-exports.getAnchorBolt = (req, res) => {
+exports.getJbolt = (req, res) => {
   
 
     jBolt.find({}).exec((err, allUser) => {
       if (err) {
           return res.status(400).json({
-              error: 'Anchor bolt not found'
+              error: 'turnBuckle not found'
           });
       }
       res.json({
-          "identifier": "get ALL Anchor bolt", allUser
+          "identifier": "get ALL jBolt", allUser
       });
 });
 };
 
-exports.getOneAnchorBolt = (req, res) => {
+exports.getOneJbolt = (req, res) => {
   const slug = req.params.slug.toLowerCase();
 
   jBolt.findOne({ _id: slug }).exec((err, allUser) => {
       if (err) {
           return res.status(400).json({
-              error: 'Anchor bolt not found'
+              error: 'jBolt not found'
           });
       }
       res.json({
-          "identifier": "get One Anchor bolt", allUser
+          "identifier": "get One jBolt", allUser
       });
 });
 };
 
 
-exports.updateAnchorBolt = (req, res) => {
+exports.updateJbolt = (req, res) => {
   const slug = req.params.slug.toLowerCase();
   var myquery = { _id: slug }
   var newV = req.body;
   jBolt.updateOne(myquery, newV).exec((err, tag) => {
       if (err) {
           return res.status(400).json({
-              error: 'cant update Anchor bolt'
+              error: 'cant update client'
           });
       }
-      res.json( {"identifier" : "updated Anchor bolt"});
+      res.json( {"identifier" : "updated jBolt"});
   });
 };

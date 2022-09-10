@@ -10,7 +10,8 @@ const {addTurnBuckle, getOneTurnBuckle, getPaginatedSearchTurnBuckle, getTurnBuc
 
 const {addLoopClevis, getLoopClevis, getOneLoopClevis, getPaginatedSearchLoopClevis, updateLoopClevis} = require('../controllers/loopClevis');
 
-const {addEShield, getEShield, getOneEShield, getPaginatedSearchEShield, updateEShield} = require('../controllers/expansionShield');
+const {addEShield, getEShield, getOneEShield, getPaginatedSearchEShield, updateEShield,
+addLScew, getLScew,getOneLScew, getPaginatedSearchLScew,updateLScew} = require('../controllers/expansionShield');
 
 const {addJbolt, getJbolt, getOneJbolt, getPaginatedSearchJbolt, updateJbolt} = require('../controllers/jbolt');
 
@@ -61,6 +62,11 @@ router.post('/admin/add/EShield',  addEShield);
 router.get('/admin/get/query/EShield', getEShield);
 router.get('/admin/get/one/EShield/:slug',  getOneEShield);
 router.put('/admin/update/EShield/:slug', updateEShield);
+
+router.post('/admin/add/LScew',  addLScew);
+router.get('/admin/get/query/LScew', getLScew);
+router.get('/admin/get/one/LScew/:slug',  getOneLScew);
+router.put('/admin/update/LScew/:slug', updateLScew);
 
 router.post('/admin/add/Jbolt',  addJbolt);
 router.get('/admin/get/query/Jbolt', getJbolt);
