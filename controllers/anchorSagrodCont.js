@@ -107,7 +107,7 @@ exports.getAsszabt41401045 = (req, res) => {
 exports.getOneAsszabt41401045 = (req, res) => {
   const slug = req.params.slug.toLowerCase();
 
-  asszabtCRS.findOne({ employeeId: slug }).exec((err, allUser) => {
+  asszabtCRS.findOne({ _id: slug }).exec((err, allUser) => {
       if (err) {
           return res.status(400).json({
               error: 'Asszabt41401045 not found'
@@ -122,7 +122,7 @@ exports.getOneAsszabt41401045 = (req, res) => {
 
 exports.updateAsszabt41401045 = (req, res) => {
   const slug = req.params.slug.toLowerCase();
-  var myquery = { employeeId: slug }
+  var myquery = { _id: slug }
   var newV = req.body;
   asszabtCRS.updateOne(myquery, newV).exec((err, tag) => {
       if (err) {
