@@ -3,10 +3,10 @@ const crypto = require('crypto');
 
 const lagScrewSchema = new mongoose.Schema(
     { 
-      diameter: {
+      screwLength: {
         type: String,
       },
-      boltLenght: {
+      screwSize: {
         type: String,
       },
         price: {

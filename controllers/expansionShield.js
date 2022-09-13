@@ -135,9 +135,9 @@ exports.updateEShield = (req, res) => {
 
 
 exports.addLScew = (req, res) => {
-    const {diameter, boltLength, price} = req.body;
+    const {screwLength, screwSize, price} = req.body;
     let DateCreated = moment().format('l');
-    let completeId = new lScrew({ diameter, boltLength, price, DateCreated});
+    let completeId = new lScrew({ screwLength, screwSize, price, DateCreated});
     
   
     completeId.save((err, data) => {
