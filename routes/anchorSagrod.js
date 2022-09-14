@@ -26,7 +26,11 @@ gethexBolt,updatehexBolt} =require('../controllers/hexbolt');
 
 const {addAnchorBolt, getAnchorBolt, getOneAnchorBolt, 
   getPaginatedSearchAnchorBolt, updateAnchorBolt} =require('../controllers/anchorBolt');
+ 
   
+const {addQuotation, getOneQuotation, 
+  getPaginatedSearchQuotation, getQuotation, updateQuotation} = require('../controllers/quotation');
+
 router.post('/admin/add/Asszabt41401045',  addAnchorSagrod);
 router.get('/admin/get/query/Asszabt41401045', getAsszabt41401045);
 router.get('/admin/get/one/Asszabt41401045/:slug',  getOneAsszabt41401045);
@@ -93,4 +97,9 @@ router.get('/admin/get/query/anchorBolt', getAnchorBolt);
 router.get('/admin/get/one/anchorBolt/:slug',  getOneAnchorBolt);
 router.put('/admin/update/anchorBolt/:slug', updateAnchorBolt);
 
+
+router.post('/admin/add/quotation',  addQuotation);
+router.get('/admin/get/query/quotation', getQuotation);
+router.get('/admin/get/one/quotation/:slug',  getOneQuotation);
+router.put('/admin/update/quotation/:slug', updateQuotation);
 module.exports = router;
