@@ -23,7 +23,6 @@ updateuboltCM,updateuboltMM } = require('../controllers/ubolt');
 const {addHexBolt, getOneHexBolt, getPaginatedSearchhexBolt,
 gethexBolt,updatehexBolt} =require('../controllers/hexbolt');
 
-const {addPlates, getOnePlates, getPlates, updatePlates, getOneUpdatedPlates} = require('../controllers/plates');
 
 const {addAnchorBolt, getAnchorBolt, getOneAnchorBolt, 
   getPaginatedSearchAnchorBolt, updateAnchorBolt} =require('../controllers/anchorBolt');
@@ -104,11 +103,9 @@ router.get('/admin/get/query/quotation', getQuotation);
 router.get('/admin/get/one/quotation/:slug',  getOneQuotation);
 router.put('/admin/update/quotation/:slug', updateQuotation);
 
-
 router.post('/admin/add/plates',  addPlates);
 router.get('/admin/get/query/plates', getPlates);
 router.get('/admin/get/latest/plates/price', getOneUpdatedPlates);
 router.get('/admin/get/one/plates/:slug',  getOnePlates);
 router.put('/admin/update/plates/:slug', updatePlates);
-
 module.exports = router;
