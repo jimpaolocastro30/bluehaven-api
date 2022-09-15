@@ -15,7 +15,7 @@ const hexboltchemaSchema = new mongoose.Schema(
       diameterValue: {
         type: String,
       },
-      price: {
+      cost: {
       type: String,
     },
       DateCreated:{

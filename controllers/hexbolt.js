@@ -5,9 +5,9 @@ var _ = require("lodash");
 
 
 exports.addHexBolt = (req, res) => {
-  const {materialValue, threadValue, boltLenght, diameterValue, price} = req.body;
+  const {materialValue, threadValue, boltLenght, diameterValue, cost} = req.body;
   let DateCreated = moment().format('l');
-  let completeId = new hexbolt({ materialValue, threadValue, boltLenght, diameterValue, price, DateCreated});
+  let completeId = new hexbolt({ materialValue, threadValue, boltLenght, diameterValue, cost, DateCreated});
   
 
   completeId.save((err, data) => {
