@@ -31,6 +31,8 @@ const {addAnchorBolt, getAnchorBolt, getOneAnchorBolt,
 const {addQuotation, getOneQuotation, 
   getPaginatedSearchQuotation, getQuotation, updateQuotation} = require('../controllers/quotation');
 
+
+const {addPlates, getOnePlates, getOneUpdatedPlates, getPlates, updatePlates} = require('../controllers/plates');
 router.post('/admin/add/Asszabt41401045',  addAnchorSagrod);
 router.get('/admin/get/query/Asszabt41401045', getAsszabt41401045);
 router.get('/admin/get/one/Asszabt41401045/:slug',  getOneAsszabt41401045);
