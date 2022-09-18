@@ -11,7 +11,9 @@ const asszbtCRSSchema = new mongoose.Schema(
       type: String,
     },
       threading: {
-      type: String,
+        type: {},
+        min: 200,
+        max: 2000000
     },
       bending: {
       type: String,
