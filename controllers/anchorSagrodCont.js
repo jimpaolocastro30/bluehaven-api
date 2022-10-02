@@ -140,6 +140,7 @@ exports.updateAsszabt41401045 = (req, res) => {
 exports.addAnchorSagrodCRS = (req, res) => {
     let DateCreated = moment().format('l');
     const {size, cuttingCost, threading,  bending} = req.body;
+    console.log("pasok " + threading)
     let completeId = new asszabtCRS({ size, cuttingCost, threading,  bending, DateCreated});
     
   
