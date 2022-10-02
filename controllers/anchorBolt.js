@@ -5,9 +5,9 @@ var _ = require("lodash");
 
 
 exports.addAnchorBolt = (req, res) => {
-  const {sizeA, inchA, bend, standard, hexNut, fW, total,typeAnchor} = req.body;
+  const {sizeA, inchA, bend, standard, hexNut, fW, total,typeAnchor, tl} = req.body;
   let DateCreated = moment().format('l');
-  let completeId = new jBolt({ sizeA, inchA, bend, standard, hexNut, fW, total,typeAnchor, DateCreated});
+  let completeId = new jBolt({ sizeA, inchA, bend, standard, hexNut, fW, total,typeAnchor, tl, DateCreated});
   
 
   completeId.save((err, data) => {
