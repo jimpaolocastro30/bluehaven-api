@@ -27,12 +27,11 @@ gethexBolt,updatehexBolt} =require('../controllers/hexbolt');
 const {addAnchorBolt, getAnchorBolt, getOneAnchorBolt, 
   getPaginatedSearchAnchorBolt, updateAnchorBolt} =require('../controllers/anchorBolt');
  
-  
+const {addPlates, getOnePlates, getOneUpdatedPlates, getPaginatedSearchPlates, getPlates, updatePlates} = require('../controllers/plates');  
+
 const {addQuotation, getOneQuotation, 
   getPaginatedSearchQuotation, getQuotation, updateQuotation} = require('../controllers/quotation');
 
-
-const {addPlates, getOnePlates, getOneUpdatedPlates, getPlates, updatePlates} = require('../controllers/plates');
 router.post('/admin/add/Asszabt41401045',  addAnchorSagrod);
 router.get('/admin/get/query/Asszabt41401045', getAsszabt41401045);
 router.get('/admin/get/one/Asszabt41401045/:slug',  getOneAsszabt41401045);
@@ -105,7 +104,7 @@ router.get('/admin/get/query/quotation', getQuotation);
 router.get('/admin/get/one/quotation/:slug',  getOneQuotation);
 router.put('/admin/update/quotation/:slug', updateQuotation);
 
-router.post('/admin/add/plates',  addPlates);
+router.post('/admin/add/plates', addPlates);
 router.get('/admin/get/query/plates', getPlates);
 router.get('/admin/get/latest/plates/price', getOneUpdatedPlates);
 router.get('/admin/get/one/plates/:slug',  getOnePlates);

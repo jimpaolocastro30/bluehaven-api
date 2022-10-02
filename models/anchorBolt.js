@@ -24,9 +24,6 @@ const anchorBoltsSchema = new mongoose.Schema(
     typeAnchor: {
       type: String,
     },
-    bend: {
-      type: String,
-    },
     tl: {
       type: String,
     },

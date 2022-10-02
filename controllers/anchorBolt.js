@@ -122,6 +122,7 @@ exports.updateAnchorBolt = (req, res) => {
   const slug = req.params.slug.toLowerCase();
   var myquery = { _id: slug }
   var newV = req.body;
+  
   jBolt.updateOne(myquery, newV).exec((err, tag) => {
       if (err) {
           return res.status(400).json({
