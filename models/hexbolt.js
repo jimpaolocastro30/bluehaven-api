@@ -3,19 +3,25 @@ const crypto = require('crypto');
 
 const hexboltchemaSchema = new mongoose.Schema(
     { 
-      hType: {
+      boltLenght: {
       type: String,
-    },
-      cType: {
+    },    
+      materialValue: {
       type: String,
     },
      threadValue: {
       type: String,
     },
-      clenght: {
+      boltLenght: {
         type: String,
       },
       cost: {
+      type: String,
+    },
+      hexNut: {
+      type: String,
+    },
+      fW: {
       type: String,
     },
       DateCreated:{
