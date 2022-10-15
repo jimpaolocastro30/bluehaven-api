@@ -32,6 +32,8 @@ const {addPlates, getOnePlates, getOneUpdatedPlates, getPaginatedSearchPlates, g
 const {addQuotation, getOneQuotation, 
   getPaginatedSearchQuotation, getQuotation, updateQuotation} = require('../controllers/quotation');
 
+const {addrawMaterial, getMaterial, getOneMaterial, updateMaterial} = require('../controllers/rawMaterial');
+
 router.post('/admin/add/Asszabt41401045',  addAnchorSagrod);
 router.get('/admin/get/query/Asszabt41401045', getAsszabt41401045);
 router.get('/admin/get/one/Asszabt41401045/:slug',  getOneAsszabt41401045);
@@ -109,4 +111,9 @@ router.get('/admin/get/query/plates', getPlates);
 router.get('/admin/get/latest/plates/price', getOneUpdatedPlates);
 router.get('/admin/get/one/plates/:slug',  getOnePlates);
 router.put('/admin/update/plates/:slug', updatePlates);
+
+router.post('/admin/add/rawMaterial', addrawMaterial);
+router.get('/admin/get/rawMaterial', getMaterial);
+router.get('/admin/get/one/rawMaterial/:slug', getOneMaterial);
+router.put('/admin/update/rawMaterial/:slug', updateMaterial);
 module.exports = router;
